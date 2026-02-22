@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Tempo de Namoro</title>
+    <link rel="stylesheet" href="css/style.css">
+  
+</head>
+<body>
+    <div class="container">
+        <!-- Cabeçalho -->
+        <div class="header">
+            <h1>Um pouco da nossa história</h1>
+            <p>Celebrando cada segundo juntos</p>
+        </div>
+
+        <!-- Abas -->
+        <div class="tab-buttons">
+            <button class="tab-button active" onclick="openTab('contador')">Contador</button>
+            <button class="tab-button" onclick="openTab('photos')">Fotos</button>
+        </div>
+
+        <!-- Aba do Contador -->
+        <div id="contador" class="tab-content active">
+            <div class="contador-card">
+                <div class="start-date">
+                    05 de Outubro de 2025 
+                </div>
+                <div class="timer">
+                    <div class="time-unit">
+                        <div class="time-number" id="years">00</div>
+                        <div class="time-label">Anos</div>
+                    </div>
+                    <div class="time-unit">
+                        <div class="time-number" id="months">00</div>
+                        <div class="time-label">Meses</div>
+                    </div>
+                    <div class="time-unit">
+                        <div class="time-number" id="days">00</div>
+                        <div class="time-label">Dias</div>
+                    </div>
+                    <div class="time-unit">
+                        <div class="time-number" id="hours">00</div>
+                        <div class="time-label">Horas</div>
+                    </div>
+                    <div class="time-unit">
+                        <div class="time-number" id="minutes">00</div>
+                        <div class="time-label">Minutos</div>
+                    </div>
+                    <div class="time-unit">
+                        <div class="time-number" id="seconds">00</div>
+                        <div class="time-label">Segundos</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Aba de Fotos -->
+        <div id="photos" class="tab-content">
+            <div class="photos-grid" id="photosGrid"></div>
+            <!--<div class="add-photo-btn" onclick="addNewPhoto()">
+                Adicionar nova foto
+            </div>
+        </div>
+
+        <!-- Modal para visualizar fotos -->
+        <div id="modal" class="modal" onclick="closeModal()">
+            <div class="modal-content">
+                <span class="modal-close" onclick="closeModal()">&times;</span>
+                <img id="modalImage" src="" alt="Foto ampliada">
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Feito com <span class="heart">AMOR</span> para celebrar nossos momentos</p>
+        </div>
+        <div class="credits">
+            <p>Desenvolvido por Wescley Henrique</p>
+        </div>
+
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
