@@ -336,3 +336,20 @@ body {
     animation: pulse 2s infinite;
 
 }
+.upload-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(241, 225, 130, 0.418);
+    border: 2px dashed #f8d303;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+.upload-button:hover {
+    background: rgba(241, 225, 130, 0.618);
+    transform: scale(1.05);
+    letter-spacing: 1px;
+}

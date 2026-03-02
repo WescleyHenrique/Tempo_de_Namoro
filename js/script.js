@@ -55,11 +55,27 @@ let photos = [
 // ========== FUNÇÕES DO CONTADOR ==========
 function updatecontador() {
     const now = new Date();
-    const diff = now - startDate;
+    
+    let years = now.getFullYear() - startDate.getFullYear();
+    let months = now.getMonth() - startDate.getMonth();
+    let days = now.getDate() - startDate.getDate();
 
-    const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
-    const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
-    const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+    // Ajuste se o dia atual for menor que o dia de início
+    if (days < 0) {
+        months--;
+        // Pega o último dia do mês anterior para compensar os dias
+        const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+        days += lastMonth.getDate();
+    }
+
+    // Ajuste se o mês atual for menor que o mês de início
+    if (months < 0) {
+        years--;
+        months += 12;
+    }
+
+    // Para horas, minutos e segundos, podemos usar o resto da divisão do tempo total
+    const diff = now - startDate;
     const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
@@ -130,30 +146,6 @@ function closeModal() {
     const modal = document.getElementById('modal');
     modal.classList.remove('active');
 }
-
-
-// ========== FUNÇÃO PARA ADICIONAR NOVAS FOTOS ==========
-//function addNewPhoto() {
-    //const title = prompt('Título da foto:');
-    //if (!title) return;
-    
-    //const date = prompt('Data (DD/MM/AAAA):');
-    //if (!date) return;
-    
-    // Em um site real, você implementaria upload de arquivo aqui
-    // Por enquanto, usamos uma imagem de exemplo
-    //const newPhoto = {
-        //src: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=400',
-        //title: title,
-        //date: date
-    //};
-    
-    //photos.push(newPhoto);
-    //renderPhotos();
-    
-    // Feedback para o usuário
-    //alert('Foto adicionada com sucesso! (Simulação - Em um site real você faria upload)');
-//}
 
 // ========== INICIALIZAÇÃO ==========
 document.addEventListener('DOMContentLoaded', function() {

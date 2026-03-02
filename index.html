@@ -56,23 +56,28 @@
             </div>
         </div>
 
-        <!-- Aba de Fotos -->
         <div id="photos" class="tab-content">
             <div class="photos-grid" id="photosGrid"></div>
-            <!--<div class="add-photo-btn" onclick="addNewPhoto()">
-                Adicionar nova foto
-            </div>
+
         </div>
 
-        <!-- Modal para visualizar fotos -->
         <div id="modal" class="modal" onclick="closeModal()">
             <div class="modal-content">
                 <span class="modal-close" onclick="closeModal()">&times;</span>
                 <img id="modalImage" src="" alt="Foto ampliada">
             </div>
         </div>
+        <input type="file" id="file" style="display: none;" accept="image/*" onchange="addPhoto(event)">
+        <label for="file" class="upload-button">Adicionar Foto</label>
 
-        <!-- Footer -->
+
+
+
+
+
+
+
+
         <div class="footer">
             <p>Feito com <span class="heart">AMOR</span> para celebrar nossos momentos</p>
         </div>
