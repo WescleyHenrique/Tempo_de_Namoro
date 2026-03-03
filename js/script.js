@@ -46,6 +46,11 @@ let photos = [
         title: 'Dia Especial',
         date: 'Jun/2024'
     },
+    {
+        src: 'fotos/Fotos_projetos/unnamed.jpg',
+        title: 'Nosso casamento',
+        date: 'Tá p acontecer ainda'
+    },
 ];
 
 //FUNÇÕES DO CONTADOR 
