@@ -1,9 +1,5 @@
-// ========== CONFIGURAÇÕES ==========
-// ALTERE A DATA DE INÍCIO DO NAMORO AQUI (ano, mês, dia)
 const startDate = new Date('2024-10-05T00:22:10');
 
-// ========== FOTOS DE EXEMPLO ==========
-// Substitua pelas suas fotos
 let photos = [
     {
         src : 'fotos/Fotos_projetos/IMG-20260118-WA0109.jpg',
@@ -52,7 +48,7 @@ let photos = [
     },
 ];
 
-// ========== FUNÇÕES DO CONTADOR ==========
+//FUNÇÕES DO CONTADOR 
 function updatecontador() {
     const now = new Date();
     
@@ -60,27 +56,23 @@ function updatecontador() {
     let months = now.getMonth() - startDate.getMonth();
     let days = now.getDate() - startDate.getDate();
 
-    // Ajuste se o dia atual for menor que o dia de início
+    
     if (days < 0) {
         months--;
-        // Pega o último dia do mês anterior para compensar os dias
         const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
         days += lastMonth.getDate();
     }
 
-    // Ajuste se o mês atual for menor que o mês de início
     if (months < 0) {
         years--;
         months += 12;
     }
 
-    // Para horas, minutos e segundos, podemos usar o resto da divisão do tempo total
     const diff = now - startDate;
     const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-    // Atualiza o HTML
     document.getElementById('years').textContent = String(years).padStart(2, '0');
     document.getElementById('months').textContent = String(months).padStart(2, '0');
     document.getElementById('days').textContent = String(days).padStart(2, '0');
@@ -89,7 +81,6 @@ function updatecontador() {
     document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
 }
 
-// ========== FUNÇÕES DAS FOTOS ==========
 function renderPhotos() {
     const grid = document.getElementById('photosGrid');
     grid.innerHTML = '';
@@ -113,28 +104,22 @@ function renderPhotos() {
     });
 }
 
-// ========== FUNÇÕES DAS ABAS ==========
 function openTab(tabName) {
-    // Esconder todas as abas
     const tabs = document.getElementsByClassName('tab-content');
     for (let i = 0; i < tabs.length; i++) {
         tabs[i].classList.remove('active');
     }
     
-    // Remover classe active de todos os botões
     const buttons = document.getElementsByClassName('tab-button');
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].classList.remove('active');
     }
     
-    // Mostrar a aba selecionada
     document.getElementById(tabName).classList.add('active');
     
-    // Adicionar classe active ao botão clicado
     event.target.classList.add('active');
 }
 
-// ========== FUNÇÕES DO MODAL ==========
 function openPhoto(src) {
     const modal = document.getElementById('modal');
     const modalImg = document.getElementById('modalImage');
@@ -147,14 +132,11 @@ function closeModal() {
     modal.classList.remove('active');
 }
 
-// ========== INICIALIZAÇÃO ==========
 document.addEventListener('DOMContentLoaded', function() {
-    // Inicia o contador
     updatecontador();
     renderPhotos();
     setInterval(updatecontador, 1000);
     
-    // Fechar modal com tecla ESC
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             closeModal();

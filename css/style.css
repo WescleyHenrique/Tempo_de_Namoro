@@ -222,29 +222,6 @@ body {
     transform: translateY(-15px) rotate(-2deg);
 }
 
-/* Botão de adicionar foto */
-.add-photo-btn {
-    display: inline-block;
-    padding: 15px 30px;
-    background: rgba(255, 215, 0, 0.3);
-    border: 2px dashed #ffd700;
-    border-radius: 10px;
-    color: white;
-    font-size: 1.2em;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: all 0.3s ease;
-    text-align: center;
-    width: 100%;
-}
-
-.add-photo-btn:hover {
-    background: rgba(255, 215, 0, 0.5);
-    transform: scale(1.05);
-    letter-spacing: 2px;
-}
-
-/* Modal para fotos */
 .modal {
     display: none;
     position: fixed;
@@ -256,7 +233,7 @@ body {
     z-index: 1000;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 2px;
 }
 
 .modal.active {
@@ -264,8 +241,8 @@ body {
 }
 
 .modal-content {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 35%;
+    max-height: 95%;
     position: relative;
 }
 
@@ -282,14 +259,8 @@ body {
     color: white;
     font-size: 2em;
     cursor: pointer;
-    transition: transform 0.3s ease;
 }
 
-.modal-close:hover {
-    transform: rotate(90deg);
-}
-
-/* Footer */
 .footer {
     text-align: center;
     padding: 40px 0;
@@ -309,7 +280,6 @@ body {
     50% { transform: scale(1.2); }
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .header h1 {
         font-size: 2em;
@@ -337,7 +307,8 @@ body {
 
 }
 .upload-button {
-    display: inline-block;
+    display: block;
+    width: fit-content;
     padding: 10px 20px;
     background: rgba(241, 225, 130, 0.418);
     border: 2px dashed #f8d303;
@@ -345,8 +316,9 @@ body {
     color: rgb(255, 255, 255);
     font-size: 1em;
     cursor: pointer;
-    margin-top: 10px;
     transition: all 0.3s ease;
+    margin: 10px auto 0;
+
 }
 .upload-button:hover {
     background: rgba(241, 225, 130, 0.618);

@@ -58,6 +58,8 @@
 
         <div id="photos" class="tab-content">
             <div class="photos-grid" id="photosGrid"></div>
+            <input type="file" id="file" style="display: none;" accept="image/*" onchange="addPhoto(event)">
+            <label for="file" class="upload-button">Adicionar Foto</label>
 
         </div>
 
@@ -67,14 +69,6 @@
                 <img id="modalImage" src="" alt="Foto ampliada">
             </div>
         </div>
-        <input type="file" id="file" style="display: none;" accept="image/*" onchange="addPhoto(event)">
-        <label for="file" class="upload-button">Adicionar Foto</label>
-
-
-
-
-
-
 
 
 
