@@ -53,7 +53,6 @@ let photos = [
     },
 ];
 
-//FUNÇÕES DO CONTADOR 
 function updatecontador() {
     const now = new Date();
     
